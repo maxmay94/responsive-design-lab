@@ -42,7 +42,7 @@ main {
   text-align: right;
   font-size: 1.5rem;
   color: rgb(64, 66, 66);
-  margin: 10px 10px 0 0;
+  padding: 10px 10px 0 0;
 }
 
 #name {
@@ -53,14 +53,18 @@ main {
 img {
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
+  border: solid 3px rgb(66, 131, 66);
 }
+
 
 #brand {
   display: none;
+
 }
 
 #occupation {
-  background-color: lightgrey;
+  background-color: rgba(211, 211, 211, 0.622);
   min-height: 100px;
   font-size: 1.8rem;
   padding: .005em;
@@ -79,20 +83,99 @@ img {
 }
 
 #contact > p:first-child {
-  background-color: lightgreen;
+  background-color: rgb(119, 202, 119);
   width: 50%;
   height: 50px;
   margin: 0 auto;
-  padding-top: 10px;
+  padding: 10px;
 }
 #contact > p:last-child {
-  background-color: green;
+  background-color: rgb(61, 137, 61);
   width: 50%;
+  height: 50px;
   margin: 0 auto;
-  padding-top: 10px;
+  padding: 10px;
 }
 
-img {
-  border-radius: 50%;
-  border: solid 3px rgb(66, 131, 66);
+
+@media only screen and (min-width: 1024px) {
+  main {
+    width: 700px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+    "status name"
+    "img occupation"
+    "img brand"
+    "contact offer";
+  }
+
+  #status {
+    text-align: left;
+    padding: 5px;
+    grid-area: status;
+  }
+  
+  #name {
+    grid-area: name;
+    padding: 20px 10px 10px 30px;
+    max-height: 10px;
+    margin: 0 0 0 0;
+    z-index: 1;
+    /* Z index moves elements up and down */
+  }
+
+  img {
+    margin: 0 auto;
+    grid-area: img;
+  }
+
+  #occupation > p:first-child {
+    grid-area: occupation;
+    padding: 10px 0 0 30px;
+    margin: 20px 0 0 0;
+    max-height: fit-content;
+  }
+  #occupation > p:last-child {
+    grid-area: occupation;
+    padding: 0 0 0 30px;
+    margin: 0 0 0 0;
+    max-height: fit-content;
+  }
+
+  #brand {
+    display: flex;
+    grid-area: brand;
+    font-size: 1.7rem;
+    
+    padding: 0 5px 0 20px;
+    border-left: 4px solid rgb(82, 164, 82);
+    /* Break into a seperate grid to get green line inside of grey area */
+  }
+
+  #contact > p:first-child{
+    grid-area: contact;
+    padding: 0 0 0 0;
+    margin: 50px 0 0 0;
+    font-size: 3.2rem;
+  }
+
+  #contact > p:last-child{
+    grid-area: contact;
+    padding: 0 0 0 0;
+    margin: 50px 0 0 0;
+    font-size: 3.2rem;
+  }
+
+  #offer {
+    padding-left: 30px;
+    grid-area: offer;
+    margin: 0 0 0 0;
+  }
+
+  #name, #occupation, #brand, #offer {
+    text-align: left;
+    background-color: rgba(211, 211, 211, 0.622);
+  }
 }
