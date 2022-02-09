@@ -62,7 +62,8 @@ img {
 #occupation {
   background-color: lightgrey;
   min-height: 100px;
-
+  font-size: 1.8rem;
+  padding: .005em;
 }
 
 #offer {
