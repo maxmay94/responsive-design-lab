@@ -127,7 +127,9 @@ img {
   }
 
   img {
+    
     margin: 0 auto;
+    margin-top: 40px;
     grid-area: img;
   }
 
